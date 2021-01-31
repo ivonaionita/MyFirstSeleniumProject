@@ -18,10 +18,18 @@ public class SearchTest {
             driver.get("http://testfasttrackit.info/selenium-test/");
         }
 @Test
-        public void SearchProduct(){
-            driver.findElement(By.cssSelector("#search")).sendKeys("linen blazer");
-            WebElement product= driver.findElement(By.cssSelector("#product-collection-image-406"));
-            Assert.assertTrue(product.isDisplayed());
+        public void searchProduct() {
+    driver.findElement(By.cssSelector("#search")).sendKeys("linen blazer");
+    driver.findElement(By.cssSelector("#search")).click();
+    WebElement product = driver.findElement(By.cssSelector("#product-collection-image-406"));
+    Assert.assertTrue(product.isDisplayed());
+}
+@Test
+        public void searchInvalidProduct(){
+            driver.findElement(By.cssSelector("#search")).sendKeys("asas");
+            driver.findElement(By.cssSelector("#search")).click();
+            WebElement message=driver.findElement(By.cssSelector("body > div > div.page > div.main-container.col3-layout > div > div.col-wrapper > div.col-main > p"));
+            Assert.assertTrue(message.isDisplayed());
         }
     @After
     public void closeBrowser(){

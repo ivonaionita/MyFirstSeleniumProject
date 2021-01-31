@@ -31,7 +31,8 @@ public class SearchTest {
             WebElement message=driver.findElement(By.cssSelector("body > div > div.page > div.main-container.col3-layout > div > div.col-wrapper > div.col-main > p"));
             Assert.assertTrue(message.isDisplayed());
         }
-    @After
+
+        @After
     public void closeBrowser(){
         driver.quit();
     }

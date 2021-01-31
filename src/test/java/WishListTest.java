@@ -87,6 +87,7 @@ public class WishListTest {
 
 
 }
+
     @After
     public void closeBrowser(){
         driver.quit();

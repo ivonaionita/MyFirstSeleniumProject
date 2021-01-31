@@ -48,6 +48,7 @@ public class RegisterTest {
         Assert.assertTrue(redMessage.isDisplayed());
 
     }
+
     @Test
     public void passwordDoesNotMatch() {
         driver.findElement(By.cssSelector(".skip-account .label")).click();
